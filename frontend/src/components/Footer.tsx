@@ -26,7 +26,7 @@ const Footer = () => {
                 <Image src="/imgs/footer/friends.png" width={56} height={28} />
                 <span className={`text-[15px] leading-none group-hover:text-[#928FDA] transition-colors duration-200 ${ pathname === '/friends' ? 'text-[#928FDA] font-bold' : '' }`}>Friends</span>
             </Link>
-            <Link to="/bets" className="flex flex-col items-center justify-end gap-[2px] group">
+            <Link to="/bets" onClick={e => e.preventDefault()} className="flex flex-col items-center justify-end gap-[2px] group">
                 <Image src="/imgs/footer/bet.png" width={43} height={44} />
                 <span className={`text-[15px] leading-none group-hover:text-[#928FDA] transition-colors duration-200 ${ pathname === '/bets' ? 'text-[#928FDA] font-bold' : '' }`}>Bets</span>
             </Link>

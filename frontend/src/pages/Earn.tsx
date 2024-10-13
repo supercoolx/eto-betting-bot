@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 import API from "@/libs/API";
 import { LINK, PLATFORM } from "@/libs/constants";
 import Image from '@/components/ui/Image';
-import Footer from "@/components/Footer";
 
 const Earn = () => {
     const user = useInitData()!.user!;
@@ -90,9 +89,10 @@ const Earn = () => {
                         <Image src="/imgs/icons/daily.png" width={39} height={43} />
                         <span className="text-[15px]">Daily Reward</span>
                     </div>
-                    <div>
-                        { dailyRemainSecond > 0 && <Image src="/imgs/icons/check.png" width={20} height={20} />}
-                    </div>
+                    {dailyRemainSecond > 0 && <div className="flex items-center gap-1">
+                        <Countdown date={Date.now() + dailyRemainSecond} intervalDelay={1000} precision={3} onComplete={() => setDailyRemainSecond(0)} renderer={(props) => <span>{props.hours.toString().padStart(2, '0')} : {props.minutes.toString().padStart(2, '0')} : {props.seconds.toString().padStart(2, '0')}</span>} />
+                        <Image src="/imgs/icons/check.png" width={20} height={20} />
+                    </div>}
                 </div>
             </div>
             <div className="mt-[18px] w-full">
@@ -109,7 +109,7 @@ const Earn = () => {
                         </div>
                     </div>
                     <div>
-                        { isJoinedTelegramChannel && <Image src="/imgs/icons/check.png" width={20} height={20} /> }
+                        {isJoinedTelegramChannel && <Image src="/imgs/icons/check.png" width={20} height={20} />}
                     </div>
                 </div>
                 <div onClick={() => isFollowingX || setOpenFollowXModal(true)} className="mt-[21px] bg-[#222131] h-[62px] flex items-center justify-between px-[14px] rounded-[15px] cursor-pointer">
@@ -124,7 +124,7 @@ const Earn = () => {
                         </div>
                     </div>
                     <div>
-                        { isFollowingX && <Image src="/imgs/icons/check.png" width={20} height={20} /> }
+                        {isFollowingX && <Image src="/imgs/icons/check.png" width={20} height={20} />}
                     </div>
                 </div>
             </div>
@@ -190,7 +190,6 @@ const Earn = () => {
                     }
                 />
             </Modal>
-            <Footer />
         </div>
     )
 }

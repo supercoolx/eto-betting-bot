@@ -6,7 +6,6 @@ import API from "@/libs/API";
 import { LINK } from "@/libs/constants";
 import Avatar from "@/components/ui/Avatar";
 import Image from '@/components/ui/Image';
-import Footer from "@/components/Footer";
 
 const Friends = () => {
     const user = useInitData()!.user!;
@@ -61,7 +60,7 @@ const Friends = () => {
                     <Image src="/imgs/icons/user-premium.png" width={39} height={39} />
                     <div className="">
                         <div className="text-[14px] font-medium">Premium users</div>
-                        <div className="text-[14px] text-[#C84D6B] font-medium">10 points</div>
+                        <div className="text-[14px] text-[#C84D6B] font-medium">20 points</div>
                     </div>
                 </div>
             </div>
@@ -94,7 +93,6 @@ const Friends = () => {
                     )) }
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

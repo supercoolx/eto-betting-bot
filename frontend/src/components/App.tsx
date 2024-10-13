@@ -8,6 +8,7 @@ import {
   useThemeParams,
   useViewport,
 } from '@telegram-apps/sdk-react';
+import { swipeBehavior } from '@telegram-apps/sdk';
 import { AppRoot } from '@telegram-apps/telegram-ui';
 import { type FC, useEffect, useMemo } from 'react';
 import {
@@ -20,6 +21,7 @@ import { ToastContainer } from 'react-toastify';
 
 import AppProvider from '@/providers/AppProvider';
 import { routes } from '@/navigation/routes.tsx';
+import Footer from './Footer';
 
 export const App: FC = () => {
   const lp = useLaunchParams();
@@ -42,6 +44,12 @@ export const App: FC = () => {
       bindViewportCSSVars(viewport);
     }
   }, [viewport]);
+
+  useEffect(() => {
+    if (swipeBehavior.isSupported()) {
+      swipeBehavior.disableVertical();
+    } else console.log('Disable vertical swipe is not supported. API version:', lp.version);
+  }, [swipeBehavior])
 
   // Create a new application navigator and attach it to the browser history, so it could modify
   // it and listen to its changes.
@@ -66,6 +74,7 @@ export const App: FC = () => {
             {routes.map((route) => <Route key={route.path} {...route} />)}
             <Route path='*' element={<Navigate to='/' />} />
           </Routes>
+          {location.pathname !== '/' && <Footer />}
         </Router>
       </AppProvider>
       <ToastContainer position="top-center" autoClose={3000} theme="dark" />

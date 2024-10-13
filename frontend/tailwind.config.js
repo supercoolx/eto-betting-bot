@@ -23,10 +23,15 @@ export default {
         'fadeup': {
           '0%': { opacity: 1, transform: 'translateY(0)' },
           '100%': { opacity: 0, transform: 'translateY(-100px)' },
+        },
+        'fadeshow': {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
         }
       },
       animation: {
-        fadeup: 'fadeup 1s ease forwards'
+        fadeup: 'fadeup 1s ease forwards',
+        fadeshow: 'fadeshow 1s ease forwards',
       }
     },
   },

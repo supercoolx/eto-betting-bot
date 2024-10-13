@@ -1,12 +1,7 @@
-import { useState, useEffect } from "react";
-import { useInitData } from "@telegram-apps/sdk-react";
 
-import API from "@/libs/API";
 import Image from '@/components/ui/Image';
-import Footer from "@/components/Footer";
 
 const Boost = () => {
-    const initData = useInitData();
 
     return (
         <div className="px-3 flex flex-col items-center overflow-y-auto pt-5 pb-[150px]">
@@ -68,7 +63,6 @@ const Boost = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

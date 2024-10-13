@@ -2,6 +2,7 @@ import { SDKProvider, useLaunchParams } from '@telegram-apps/sdk-react';
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
 import { type FC, useEffect } from 'react';
 
+import { LINK } from '@/libs/constants';
 import { App } from '@/components/App.tsx';
 import { ErrorBoundary } from '@/components/ErrorBoundary.tsx';
 
@@ -25,7 +26,6 @@ const Inner: FC = () => {
   // const manifestUrl = useMemo(() => {
   //   return new URL('tonconnect-manifest.json', window.location.href).toString();
   // }, []);
-  const manifestUrl = 'https://raw.githubusercontent.com/supercoolx/manifests/refs/heads/master/mole-manifest.json';
 
   // Enable debug mode to see all the methods sent and events received.
   useEffect(() => {
@@ -35,7 +35,7 @@ const Inner: FC = () => {
   }, [debug]);
 
   return (
-    <TonConnectUIProvider manifestUrl={manifestUrl}>
+    <TonConnectUIProvider manifestUrl={LINK.MANIFEST}>
       <SDKProvider acceptCustomStyles debug={debug}>
         <App/>
       </SDKProvider>

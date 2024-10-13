@@ -4,7 +4,6 @@ import { useInitData } from '@telegram-apps/sdk-react';
 
 import Image from "@/components/ui/Image";
 import TapEffect, { TapEffectProps } from '@/components/ui/TapEffect';
-import Footer from "@/components/Footer";
 
 const Game = () => {
     const user = useInitData()!.user!;
@@ -64,7 +63,6 @@ const Game = () => {
                 <span className="w-[191px] h-[45px] rounded-full bg-[#000000B3] font-bold text-[15px] flex items-center justify-center leading-none">TAP TO COLLECT</span>
             </div>
             { effects.map(effect => <TapEffect key={effect.id} left={effect.left} top={effect.top} text={effect.text} />) }
-            <Footer />
         </div>
     )
 }

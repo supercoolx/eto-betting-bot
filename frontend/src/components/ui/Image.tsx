@@ -10,21 +10,21 @@ type ImageProps = {
 }
 
 const Image = ({ src, width, height, alt, className, ...otherProps }: ImageProps) => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     return <Fragment>
-        <div
-            className={` ${className ?? ''}`}
-            style={{
-                display: loading ? 'auto' : 'none',
-                width: width ? width + 'px' : '',
-                height: height ? height + 'px' : ''
-            }}
-        />
+        {loading &&
+            <div
+                className={` ${className ?? ''}`}
+                style={{
+                    width: width ? width + 'px' : '',
+                    height: height ? height + 'px' : ''
+                }}
+            />}
         <img
-            className={` ${className ?? ''}`}
+            className={`animate-fadeshow ${className ?? ''}`}
             style={{
-                display: loading ? 'none' : 'auto',
+                opacity: loading ? 0 : 1,
                 width: width ? width + 'px' : '',
                 height: height ? height + 'px' : ''
             }}
