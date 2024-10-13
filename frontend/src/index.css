@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities{
+    .btn-anim {
+        @apply hover:-translate-y-1 hover:active:translate-y-0 hover:disabled:translate-y-0 transition-transform duration-200 outline-none 
+    }
+}
+
+:root {
+    --toastify-color-progress-dark: linear-gradient(to right, #054D7D, #D75070);
+}
+
+* {
+    color: white;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #13131D;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    overflow-x: hidden;
+    font-family: 'Metropolis', sans-serif;
+}
+
+a, img {
+    -webkit-user-drag: none;
+    -moz-window-dragging: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
