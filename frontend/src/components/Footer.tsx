@@ -8,11 +8,11 @@ const Footer = () => {
 
     return (
         <div className="fixed bottom-8 left-[7px] z-[2] w-[calc(100vw-14px)] h-[79px] rounded-[25px] bg-[#000000B3] grid grid-cols-5 pb-[14px] px-4">
-            <Link to="/earn" className="flex flex-col items-center justify-end gap-[7px] group">
+            <Link to="/" className="flex flex-col items-center justify-end gap-[7px] group">
                 <Image src="/imgs/footer/earn.png" width={50} height={37} />
                 <span className={`text-[15px] leading-none group-hover:text-[#928FDA] transition-colors duration-200 ${ pathname === '/earn' ? 'text-[#928FDA] font-bold' : '' }`}>Earn</span>
             </Link>
-            <Link to="/boost" className="flex flex-col items-center justify-end gap-[8px] group">
+            <Link to="/" className="flex flex-col items-center justify-end gap-[8px] group">
                 <Image src="/imgs/footer/boost.png" width={40} height={38} />
                 <span className={`text-[15px] leading-none group-hover:text-[#928FDA] transition-colors duration-200 ${ pathname === '/boost' ? 'text-[#928FDA] font-bold' : '' }`}>Boost</span>
             </Link>
